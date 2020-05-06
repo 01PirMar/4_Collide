@@ -83,7 +83,9 @@ namespace ConsoleApplication1
 
         }
         static bool LoadConfig(ref int Anzahl)
+
         {
+            bool status;
             var path = @"C:\Users\marja\Desktop\AufgabeD\4_Collide\Collision\config.ini";
             StreamReader reader = new StreamReader(path);
 
@@ -94,14 +96,15 @@ namespace ConsoleApplication1
 
              Console.WriteLine(Anzahl);
             
-             if (path = @"C:\Users\marja\Desktop\AufgabeD\4_Collide\Collision\config.ini")
+             if (path == @"C:\Users\marja\Desktop\AufgabeD\4_Collide\Collision\config.ini" || !(Anzahl == 0))
              {
-                 Console.WriteLine("True");
+                 status = true;
              }
              else
              {
-                 Console.WriteLine("False");
+                 status = false;
              }
+            return status;
              
         }
         static bool SaveConfig(int Anzahl)
@@ -110,17 +113,20 @@ namespace ConsoleApplication1
             StreamWriter writer = new StreamWriter(path);
              Anzahl = 12;
 
+             bool status;
+
             //writer.Write(Anzahl);
              writer.Close();
             
-             if (path = @"C:\Users\marja\Desktop\AufgabeD\4_Collide\Collision\config.ini")
+             if (path == @"C:\Users\marja\Desktop\AufgabeD\4_Collide\Collision\config.ini")
              {
-                 Console.WriteLine("True");
+                 status = true;
              }
              else
              {
-                 Console.WriteLine("False");
+                 status = false;
              }
+             return status;
 
         }
        
